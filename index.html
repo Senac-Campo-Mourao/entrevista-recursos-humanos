@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Games - Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #1565c0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .navbar .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+
+        .navbar .menu a:hover {
+            color: #90caf9;
+        }
+
+        .navbar .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar .profile svg {
+            width: 28px;
+            height: 28px;
+            color: #1565c0;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 64px);
+            padding: 40px 0;
+        }
+
+        .left {
+            background: rgba(255, 255, 255, 0);
+            border-radius: 16px 0 0 16px;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 320px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0);
+        }
+
+        .left .illustration {
+            margin-bottom: 24px;
+        }
+
+        .left h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .right {
+            background: rgba(255, 255, 255, 0);
+            border-radius: 0 16px 16px 0;
+            padding: 48px 32px;
+            min-width: 320px;
+            box-shadow: 0 4px 24px rgba(37, 37, 37, 0);
+        }
+
+        .right h2 {
+            color: #000000;
+            margin-bottom: 16px;
+            font-size: 1.3em;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 6px;
+            color: #000000;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdbdbd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .forgot {
+            display: block;
+            margin-bottom: 18px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #43a047;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #2e7031;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .left,
+            .right {
+                border-radius: 16px;
+                min-width: 260px;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt=" Games Profissões">
+            <span style="font-weight:700; font-size:1.1em;"> Games Profissões</span>
+        </div>
+        <div class="menu">
+            <a href="Cadrastro.html">Cadastro</a>
+            <a href="PaginaInicial.html">Página inicial</a>
+            <a href="configuracao.html">Configuração</a>
+        </div>
+        <div class="profile">
+            <svg fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z" />
+            </svg>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="left">
+            <div class="illustration">
+                <img src="hiregames.png" alt="Hire Games Logo" style="width:40em; height:auto;">
+            </div>
+            <h1></h1>
+        </div>
+        <div class="right">
+            <h2>Bem Vindo ao Hire Game</h2>
+            <form action="/user/login" method="post">
+                <div class="form-group">
+                    <label for="user">Nome completo ou e-mail</label>
+                    <input type="text" id="user" name="user" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Senha</label>
+                    <input type="password" id="pass" name="pass" autocomplete="current-password">
+                </div>
+                <a href="#" class="forgot">Esqueceu a senha?</a>
+                <button type="submit" class="login-btn">ENTRAR</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

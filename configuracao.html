@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuração - Hire Games</title>
+</head>
+<body>
+    <a href="index.html">Voltar para a página inicial</a>
+</body>
+ <style>
+
+  body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        h1 {
+            color: #1565c0;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .setting-group {
+            margin-bottom: 28px;
+        }
+        .setting-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .volume-control button {
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background-color: #1565c0;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .volume-control button:hover {
+            background-color: #0d47a1;
+        }
+        .volume-value {
+            min-width: 32px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+    </style>
+</head>
+<body style="margin: 0; background-color: #2c4b6e; font-family: Georgia, serif; color: white;">
+
+  <!-- Cabeçalho -->
+  <table width="100%" bgcolor="#183c5a" style="padding: 10px;">
+    <tr>
+      <td style="padding-left: 20px;">
+        <div style="background-color: #f58220; display: inline-block; padding: 5px 15px; border-radius: 40px;">
+          <strong>Senac Games<br>Profissões</strong>
+        </div>
+      </td>
+      <td align="center">
+        <a href="Cadrastro.html" style="color: white; text-decoration: none; margin: 0 10px;">Cadastro</a>
+        <a href="PaginaInicial.html" style="color: white; text-decoration: none; margin: 0 10px;">Página Inicial</a>
+        <a href="configuracao.html" style="color: white; text-decoration: none; margin: 0 10px;">Configuração</a>
+      </td>
+      <td align="right" style="padding-right: 20px;">
+        <div style="width: 35px; height: 35px; background-color: white; border-radius: 50%; text-align: center; line-height: 35px; color: #183c5a; border: 3px solid #f58220;">
+          👤
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Conteúdo -->
+  <div style="padding: 40px;">
+
+    <!-- Controle de Som -->
+     <div class="setting-group">
+            <div style="background-color: #8698a7; color: black; padding: 10px 20px; border-radius: 20px; width: 200px; margin-bottom: 15px;">som do Volume</div>
+            <div class="volume-control">
+                <button type="button" onclick="changeVolume(-10)" title="Diminuir volume">-</button>
+                <span class="volume-value" id="volumeValue">50</span>
+                <button type="button" onclick="changeVolume(10)" title="Aumentar volume">+</button>
+            </div>
+            <input type="range" id="volume" min="0" max="100" value="50" style="width:100%;" oninput="updateVolume(this.value)">
+        </div>
+    <!-- Botão Feedback -->
+    <a href="feedback.html" style="text-decoration: none;">
+      <div style="background-color: #8698a7; color: black; padding: 10px 20px; border-radius: 20px; width: 200px; margin-bottom: 15px;">
+        Feedback &gt;
+      </div>
+    </a>
+
+    <!-- Botão Logout -->
+    <a href="index.html" style="text-decoration: none;">
+      <div style="background-color: #8698a7; color: black; padding: 10px 20px; border-radius: 20px; width: 200px;">
+        Logout &gt;
+      </div>
+    </a>
+
+<script>
+        const volumeSlider = document.getElementById('volume');
+        const volumeValue = document.getElementById('volumeValue');
+
+        function updateVolume(val) {
+            volumeValue.textContent = val;
+        }
+
+        function changeVolume(delta) {
+            let newVal = Math.max(0, Math.min(100, parseInt(volumeSlider.value) + delta));
+            volumeSlider.value = newVal;
+            updateVolume(newVal);
+        }
+    </script>
+
+  </div>
+
+</body>
+</html>
+</html>
